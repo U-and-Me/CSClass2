@@ -17,6 +17,10 @@ namespace CSClass2
             Console.WriteLine(wantedString.Value);
             Console.WriteLine(wantedInt.Value);
             Console.WriteLine(wantedDouble.Value);
+
+            Products p = new Products();
+            Console.WriteLine(p[4]);
+            p[4] = 5;
         }
     }
 }
