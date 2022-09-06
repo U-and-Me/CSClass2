@@ -82,6 +82,11 @@ namespace CSClass2
             IBasic basic = new TestClass();
             //basic.something();
             (basic as TestClass).someting();
+
+            Child c = new Child();
+            Parent childAsParent = c;
+            IDisposable childAsDispoable = c;
+            IComparable<Child> childAsComparable = c;
         }
 
         class TestClass : IBasic
