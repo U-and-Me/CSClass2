@@ -123,17 +123,40 @@ namespace CSClass2
 
             // 예외처리
             string[] array = { "가", "나" };
-            Console.WriteLine("숫자를 입력해주세요 (예: 3) : ");
-            int input = int.Parse(Console.ReadLine());
+            Boolean isInputLoop = true;
 
-            if(input < array.Length)
+            while (isInputLoop)
             {
-                Console.WriteLine("입력한 위치의 값은 '" + array[input] + "' 입니다.");
+                Console.WriteLine("숫자를 입력해주세요 [0 ~ " + (array.Length - 1) + "] : ");
+
+                string input = Console.ReadLine();
+                try
+                {
+                    int index = int.Parse(input);
+                    Console.WriteLine("입력한 위치의 값은 '" + array[index] + "' 입니다.");
+                    isInputLoop = false;
+                }
+                catch (IndexOutOfRangeException exception)
+                {
+                    Console.WriteLine("0 이상 " + array.Length + " 미만 값을 입력하세요");
+                    //Console.WriteLine(exception.GetType());
+                }
+                catch (FormatException exception)
+                {
+                    Console.WriteLine("숫자가 아닌 것을 입력하셨습니다.");
+                    //Console.WriteLine(exception.GetType());
+                }
+                catch (Exception exception)
+                {
+                    Console.WriteLine("예외가 발생했습니다.");
+                    //Console.WriteLine(exception.GetType());
+                }
+                finally
+                {
+                    //Console.WriteLine("프로그램이 종료되었습니다.");
+                }
             }
-            else
-            {
-                Console.WriteLine("인덱스 범위를 넘었습니다.");
-            }
+            
         }
 
         class TestClass : IBasic
