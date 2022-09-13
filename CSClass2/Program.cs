@@ -146,6 +146,7 @@ namespace CSClass2
                     Console.WriteLine("숫자가 아닌 것을 입력하셨습니다.");
                     //Console.WriteLine(exception.GetType());
                 }*/
+               // catch(var exception) - var는 예외 매개변수 부분에서 사용 불가능
                 catch (Exception exception)
                 {
                     Console.WriteLine("예외가 발생했습니다.");
