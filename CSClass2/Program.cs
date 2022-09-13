@@ -125,6 +125,19 @@ namespace CSClass2
             string[] array = { "가", "나" };
             Boolean isInputLoop = true;
 
+            // 예외 강제 발생
+            //throw new FormatException();
+            try
+            {
+                throw new HungryException("아아 배고파 예외 발생");
+            }
+            catch (HungryException exception)
+            {
+                Console.WriteLine("GetType : " + exception.GetType());
+                Console.WriteLine("Message : " + exception.Message);
+                Console.WriteLine("StackTrace : " + exception.StackTrace);
+            }
+
             while (isInputLoop)
             {
                 Console.WriteLine("숫자를 입력해주세요 [0 ~ " + (array.Length - 1) + "] : ");
