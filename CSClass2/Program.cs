@@ -136,7 +136,7 @@ namespace CSClass2
                     Console.WriteLine("입력한 위치의 값은 '" + array[index] + "' 입니다.");
                     isInputLoop = false;
                 }
-                catch (IndexOutOfRangeException exception)
+               /* catch (IndexOutOfRangeException exception)
                 {
                     Console.WriteLine("0 이상 " + array.Length + " 미만 값을 입력하세요");
                     //Console.WriteLine(exception.GetType());
@@ -145,11 +145,13 @@ namespace CSClass2
                 {
                     Console.WriteLine("숫자가 아닌 것을 입력하셨습니다.");
                     //Console.WriteLine(exception.GetType());
-                }
+                }*/
                 catch (Exception exception)
                 {
                     Console.WriteLine("예외가 발생했습니다.");
-                    //Console.WriteLine(exception.GetType());
+                    Console.WriteLine("GetType : " + exception.GetType());
+                    Console.WriteLine("Message : " + exception.Message);
+                    Console.WriteLine("StackTrace : " + exception.StackTrace);
                 }
                 finally
                 {
